@@ -1,15 +1,13 @@
-import { Banner } from "../widgets/Banner/Banner"
-import { Footer } from "../widgets/Footer/Footer"
-import { Header } from "../widgets/Header"
+import { AppRouter } from "./router/AppRouter"
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
 import "./styles/global.scss"
 
 const App = () => {
-  return (
-    <div>
-      <Header/>
-      <Banner/>
-      <Footer/>
-    </div>
+  const queryClient = new QueryClient();
+  return(
+  <QueryClientProvider client={queryClient}>
+    <AppRouter />
+  </QueryClientProvider>
   )
 }
 

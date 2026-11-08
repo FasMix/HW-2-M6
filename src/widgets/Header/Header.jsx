@@ -2,19 +2,31 @@ import s from "./Header.module.scss"
 import shop from "../../image/Frame.svg"
 import log from "../../image/Frame (1).svg"
 import search from "../../image/Frame (2).svg"
+import { useCategories } from "./Header.api"
+import { Link, NavLink } from "react-router-dom"
+
+const renderCategoriesLink = (name) => {
+    const toCategory = `/category/${name}`;
+    return (
+    <NavLink key={name} to={toCategory}>
+        {name}
+    </NavLink>
+    )
+}
 
 export const Header = () => {
+    const {data: categories, isPending, isError, error} = useCategories();
+
   return (
     <header className={s.header}>
         <div className={s.wrapper}>
-            <h2 className={s.title}>SHOP.CO</h2>
+            <Link to="/" className={s.title}>
+                SHOP.CO
+            </Link>
         </div>
         <nav className={s.nav}>
             <ul className={s.list}>
-                <li className={s.item}>Shop</li>
-                <li className={s.item}>On Sale</li>
-                <li className={s.item}>New Arrivals</li>
-                <li className={s.item}>Brands</li>
+                {categories?.map(renderCategoriesLink)}
             </ul>
         </nav>
         <div className={s.search}>

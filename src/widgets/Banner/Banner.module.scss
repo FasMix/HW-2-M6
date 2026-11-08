@@ -1,15 +1,19 @@
 body {
-    background-color: var(--bg-ban);
 }
 
 .banner {
-    width: 1440px;
-    margin: 0 auto;
     background-image: url("../../image/Rectangle 2.jpg");
     background-repeat: no-repeat;
-    height: 663px;
-    padding: 103px 85px;
+    background-position: center;
+    padding: 89px 0px;
     display: flex;
+    background-color: var(--bg-ban);
+
+    .container {
+        width: 1239px;
+        margin: 0 auto;
+        position: relative;
+    }
 }
 
 .title {
@@ -21,12 +25,12 @@ body {
 }
 
 .text {
-    width: 630px;
+    width: 548px;
     height: 33px;
     font-weight: 400;
     line-height: 22px;
     margin-top: 45px;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--color-gray);
 }
 
@@ -61,29 +65,34 @@ hr {
 }
 
 .price {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
 }
 
 .des {
-    font-size: 16px;
+    font-size: 10px;
 }
 
 .mini {
     width: 56px;
     height: 56px;
-    margin-top: 210px;
-    margin-left: 54px;
+    top: 50%;
+    left: 55%;
     position: absolute;
+    transform: translate(-50%, -50%);
 }
 
 .max {
-    margin-left: 468px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .mini:hover {
-    transform: scale(1.1);
+    width: 65px;
+    height: 65px;
     transition: .3s ease-in-out;
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
 

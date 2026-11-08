@@ -9,13 +9,16 @@ header{
 
 .title{
     font-size: 32px;
-    font-style: bold;
+    font-weight: 900;
+    text-decoration: none;
     cursor: pointer;
+    color: var(--color-black);
     transition: .3s;
 }
 
 .title:hover{
     color: var(--color-gray);
+    transform: scale(1.1);
 }
 
 .list{
@@ -68,4 +71,18 @@ header{
 
 .icNav:hover{
     transform: scale(1.2);
+}
+
+.list a{
+    text-decoration: none;
+    color: var(--color-black);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.list a:hover{
+    color: var(--color-gray);
+    transition: .2s;
+    transform: scale(1.1);
 }
